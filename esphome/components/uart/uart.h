@@ -10,7 +10,7 @@ namespace uart {
 #ifdef ARDUINO_ARCH_ESP8266
 class ESP8266SoftwareSerial {
  public:
-  void setup(int8_t tx_pin, int8_t rx_pin, uint32_t baud_rate, uint8_t stop_bits);
+  void setup(int8_t tx_pin, int8_t rx_pin, uint32_t baud_rate, uint8_t stop_bits, bool invert);
 
   uint8_t read_byte();
   uint8_t peek_byte();

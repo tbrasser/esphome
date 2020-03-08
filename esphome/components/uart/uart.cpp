@@ -33,7 +33,8 @@ void UARTComponent::setup() {
   uint32_t config = SERIAL_8N1;
   if (this->stop_bits_ == 2)
     config = SERIAL_8N2;
-  this->hw_serial_->begin(this->baud_rate_, config, rx, tx);
+  // Invert Serial with true,   false=default
+  this->hw_serial_->begin(this->baud_rate_, config, rx, tx, true);
 }
 
 void UARTComponent::dump_config() {
