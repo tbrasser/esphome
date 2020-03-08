@@ -30,6 +30,7 @@ void UARTComponent::setup() {
   }
   int8_t tx = this->tx_pin_.has_value() ? *this->tx_pin_ : -1;
   int8_t rx = this->rx_pin_.has_value() ? *this->rx_pin_ : -1;
+  bool invert = this->invert_.has_value() ? *this->invert_ : false;
   uint32_t config = SERIAL_8N1;
   if (this->stop_bits_ == 2)
     config = SERIAL_8N2;
